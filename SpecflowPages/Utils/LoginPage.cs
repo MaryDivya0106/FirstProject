@@ -17,6 +17,8 @@ namespace SpecflowPages.Utils
             Driver.NavigateUrl();
             Thread.Sleep(1000);
 
+            Driver.driver.Navigate().Refresh();
+
             //Enter Url
             Driver.driver.FindElement(By.XPath("//*[@class='item']")).Click();
 

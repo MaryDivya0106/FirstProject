@@ -15,9 +15,12 @@ Scenario Outline: Check if user could able to add maximum four  languages
 		 | English  |
 		 | Telugu   |
 		 
-		
-		 
-	
+
+	Scenario: Check if user could able to add  languages 
+	Given I clicked on Language tab under Profile page
+	When When I add a new language
+	Then that language should be displayed on my listings
+ 
 
 
 
@@ -48,9 +51,35 @@ And   I clicked on Edit Symbol.
 	Given I click on the Language tab under Profile page.
 	When  I click on delete symbol.
 	Then that language should Delete from my Language listing.
+
+ Scenario: Check if user gives duplicate values.
+	Given I click on the Language tab under Profile page.
+	When  I click on Add New button.
+	And I entered existing language and changed level and clicked on Add button
+	Then I should able to see popup intimating Duplicated data.
+
+	Scenario: Check if user gives Existing Data.
+	Given I clicked on Add New button.
+	When  I click on Add New button.
+	And I entered existing language and level and clicked on Add button.
+	Then I should able to see popup intimating as language Exists.
+
+
+	Scenario: Check Availability status in profile page.
+	Given I click on edit button of Availabity in Profile page.
+	When I clicked on SelectType dropdown and selected status from dropdown.
+	Then I can see availability selected status and popup.
+
 	
+	Scenario: Check hours status in profile page.
+	Given I click on edit button of hours in Profile page click .
+	When I clicked on SelectType dropdown and selected hours from dropdown.
+	Then I should able to see selected hours and popup.
 
-
+	Scenario: Check EarnTarget status in profile page.
+	Given I click on edit button of EarnTarget in Profile page .
+	When I clicked on SelectType dropdown and selected amount from dropdown.
+	Then I should able to see selected amount and popup.
 
 
 
