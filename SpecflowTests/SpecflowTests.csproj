@@ -95,6 +95,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AcceptanceTest\AddEducation.cs" />
     <Compile Include="AcceptanceTest\AddLanguage.cs" />
     <Compile Include="AcceptanceTest\Skills.feature.cs">
       <AutoGen>True</AutoGen>
@@ -106,20 +107,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Education.feature</DependentUpon>
     </Compile>
-    <Compile Include="AcceptanceTest\Certification.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Certification.feature</DependentUpon>
-    </Compile>
+    <Compile Include="AcceptanceTest\AddCertification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AcceptanceTest\SpecFlowFeature1.feature.cs">
+    <Compile Include="AcceptanceTest\Language.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>Language.feature</DependentUpon>
     </Compile>
+    <Compile Include="AcceptanceTest\AddSkills.cs" />
     <Compile Include="Utils\Start.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AcceptanceTest\Certi.feature" />
+    <None Include="AcceptanceTest\Certifications.feature" />
     <None Include="AcceptanceTest\Skills.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Skills.feature.cs</LastGenOutput>
@@ -129,14 +129,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Education.feature.cs</LastGenOutput>
     </None>
-    <None Include="AcceptanceTest\Certification.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Certification.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
-    <None Include="AcceptanceTest\SpecFlowFeature1.feature">
+    <None Include="AcceptanceTest\Language.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>Language.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

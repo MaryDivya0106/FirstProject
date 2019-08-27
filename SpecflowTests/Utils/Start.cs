@@ -40,7 +40,7 @@ namespace SpecflowTests.Utils
             CommonMethods.extent.Flush();
 
             //Close the browser
-            Close();
+           // Driver.driver.Close();
         }
 
     }

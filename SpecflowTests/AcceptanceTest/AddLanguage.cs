@@ -10,7 +10,7 @@ using static SpecflowPages.Driver;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
+
 
 namespace SpecflowTests.AcceptanceTest
 {
@@ -26,12 +26,13 @@ namespace SpecflowTests.AcceptanceTest
 
             // Click on Profile tab
             Driver.driver.FindElement(By.LinkText("Profile")).Click();
-            // Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[2]")).Click();
+
             Driver.driver.FindElement(By.LinkText("Languages")).Click();
 
         }
-         
+       
         [When(@"When I add a new ""(.*)""")]
+        [Scope(Feature = "LanguageFeature")]
         public void WhenWhenIAddANew(string p0)
         {
             Thread.Sleep(5000);
@@ -56,47 +57,12 @@ namespace SpecflowTests.AcceptanceTest
             Driver.driver.FindElement(By.XPath("//*[@value='Add']")).Click();
         }
 
-
-
-
-        //[Then(@"that language should be displayed on my listings")]
-        //public void ThenThatLanguageShouldBeDisplayedOnMyListings()
-        //{
-        //    try
-        //    {
-
-        //        //Start the Reports
-        //        CommonMethods.ExtentReports();
-        //        Thread.Sleep(1000);
-        //        CommonMethods.test = CommonMethods.extent.StartTest("Add a Language");
-
-        //        Thread.Sleep(1000);
-        //        string ExpectedValue = p0 +"has been added to your language";
-        //        string ActualValue = Driver.driver.FindElement(By.XPath("//*[@name='name']")).Text;
-        //        Thread.Sleep(500);
-        //        if(ExpectedValue == ActualValue)
-        //        {
-        //            CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
-        //            SaveScreenShotClass.SaveScreenshot(Driver.driver, "LanguageAdded");
-        //        }
-
-        //        else
-        //            CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
-
-        //    }
-        //    catch(Exception e)
-        //    {
-        //        CommonMethods.test.Log(LogStatus.Fail, "Test Failed",e.Message);
-        //    }
-
-
-
-        //}
         [Then(@"Add New Tab should disappear under language tab")]
         public void ThenAddNewTabShouldDisappearUnderLanguageTab()
         {
             try
             {
+                Driver.driver.FindElement(By.XPath("//th[@class='right aligned']/div")).Click();
 
                 //Start the Reports
                 CommonMethods.ExtentReports();
@@ -118,28 +84,27 @@ namespace SpecflowTests.AcceptanceTest
             }
 
         }
-    }
-}//Parameterization using scenario outline"
-namespace SpecflowTests//Adding single language
-{
-    [Binding]
-    public class Addinglanguage
-    {
-        [Given(@"I clicked on Language tab under Profile page")]
-        public void GivenIClickedOnLanguageTabUnderProfilePage()
+    //}
+/*}*///Parameterization using scenario outline"
+
+//namespace SpecflowTests
+//{
+//    [Binding]
+//    public class singlelanguage
+//    {
+        [Given(@"I clicked on Language tab under the Profile page")]
+        public void GivenIClickedOnLanguageTabUnderTheProfilePage()
         {
             //Wait
             Thread.Sleep(1500);
-
             // Click on Profile tab
             Driver.driver.FindElement(By.LinkText("Profile")).Click();
-            // Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[2]")).Click();
             Driver.driver.FindElement(By.LinkText("Languages")).Click();
 
         }
 
-        [When(@"When I add a new language")]
-        public void WhenWhenIAddANewLanguage()
+        [When(@"When I add new language")]
+        public void WhenWhenIAddNewLanguage()
         {
             Thread.Sleep(5000);
             // Click on Add New button
@@ -161,8 +126,8 @@ namespace SpecflowTests//Adding single language
             Driver.driver.FindElement(By.XPath("//*[@value='Add']")).Click();
         }
 
-        [Then(@"that language should be displayed on my listings")]
-        public void ThenThatLanguageShouldBeDisplayedOnMyListings()
+        [Then(@"that language should displayed on my listings")]
+        public void ThenThatLanguageShouldDisplayedOnMyListings()
         {
             try
             {
@@ -173,7 +138,7 @@ namespace SpecflowTests//Adding single language
                 CommonMethods.test = CommonMethods.extent.StartTest("Add a Language");
 
                 Thread.Sleep(1000);
-                string ExpectedValue ="Urdu";
+                string ExpectedValue = "Urdu";
                 string ActualValue = Driver.driver.FindElement(By.XPath("//table/tbody/tr/td[contains(text(),'Urdu')]")).Text;
                 Thread.Sleep(500);
                 Assert.AreEqual(ExpectedValue, ActualValue);
@@ -185,12 +150,8 @@ namespace SpecflowTests//Adding single language
             {
                 CommonMethods.test.Log(LogStatus.Fail, "Test Failed", e.Message);
             }
-
-        }
-
+}//Adding Single Language
 }
-
-
 }
 
 namespace SpecflowTests //Updating Language
@@ -210,43 +171,10 @@ namespace SpecflowTests //Updating Language
         [Given(@"I clicked on Edit Symbol\.")]
         public void GivenIClickedOnEditSymbol_()
         {
-            //gets list of languages
-            //IList<IWebElement> ListOfLang = Driver.driver.FindElements(By.XPath("//table[@class='ui fixed table']/tbody/tr"));
-            ////writes count of lanuage on console
-            //Console.WriteLine(ListOfLang.Count);
-            //writes all items in language table
-            //foreach (var item in ListOfLang)
-            //{
-            // //var row= item.FindElement(By.XPath("//table[@class='ui fixed table']/tbody/tr/td[1]"));
-            // // var rows=row.GetAttribute("//table[@class='ui fixed table']/tbody/tr/td[1]");
-            // // if (rows.Contains("English")) ;
-            // // {
-            // //     Driver.driver.FindElement(By.XPath("//td[@class='right aligned']/span[1]/i")).Click();
-            // // }
 
-
-            // Console.WriteLine(item.Text);
-            //IWebElement click= Driver.driver.FindElement(By.XPath("//table[@class='ui fixed table']/tbody/tr/td[3]/span[1]/i"));
-            // if (item.GetAttribute("English"))
-            // {
-            //     click.Click();
-            // }
-            // //checks whether language is present
-
-            // //for (int row = 0; row <= ListOfLang.Count; row++)
-            // //{
-            // //    Console.WriteLine(ListOfLang.IndexOf(row).Equals("English");
-            // //}
-
-            //tbody/tr/td[1]/following-sibling::td[2]
-             Driver.driver.FindElement(By.XPath("//tbody/tr/td[contains(text(),'English')]//..//following-sibling::td[1]/span[1]/i")).Click();
-//            String beforepath = "tbody/tr/td[";
-//String afterpath= "]/
+            Driver.driver.FindElement(By.XPath("//tbody/tr/td[contains(text(),'English')]//..//following-sibling::td[1]/span[1]/i")).Click();
 
         }
-
-
-
         [When(@"i changed the language in language tab and selected level from dropdown list\.")]
         public void WhenIChangedTheLanguageInLanguageTabAndSelectedLevelFromDropdownList_()
         {
@@ -256,7 +184,6 @@ namespace SpecflowTests //Updating Language
             //language remain same and updating value to fluent instead of basic
             
             IWebElement dropdown = Driver.driver.FindElement(By.XPath("//select[@name='level']"));
-            //dropdown.Click();
             SelectElement option = new SelectElement(dropdown);
             option.SelectByIndex(3);
 
@@ -325,8 +252,6 @@ namespace SpecflowTests
             Thread.Sleep(1500);
             Driver.driver.FindElement(By.XPath("//div[@class='five wide field']")).Click();
             Driver.driver.FindElement(By.XPath("//*[@name='name']")).Clear();
-            //IWebElement name = Driver.driver.FindElement(By.XPath("//*[@name='name']"));
-            //name.SendKeys("");
             SelectElement lang = new SelectElement(Driver.driver.FindElement(By.XPath("//*[@name='level']")));
             lang.SelectByIndex(0);
 
@@ -451,7 +376,7 @@ namespace SpecflowTests //Deleting existing  language
         {
 
             Driver.driver.FindElement(By.XPath("//tbody/tr/td[contains(text(),'Tamil')]//..//following-sibling::td[1]/span[2]/i")).Click();
-            //            String beforepath = "tbody/tr/td[";
+         
         }
 
         [Then(@"that language should Delete from my Language listing\.")]
@@ -470,18 +395,9 @@ namespace SpecflowTests //Deleting existing  language
 
                 Assert.AreEqual(ExpectedResult, ActualResult);
                 Assert.IsTrue(ActualResult.Contains("English has been deleted from your languages"));
-                //if (ExpectedResult == ActualResult)
-                //{
                 CommonMethods.test.Log(LogStatus.Pass, "test Passed, Deleted Language Successfully");
                 CommonMethods.SaveScreenShotClass.SaveScreenshot(Driver.driver, "deleted pic");
 
-                //}
-                //else
-                //{
-                //    CommonMethods.test.Log(LogStatus.Fail, "testfailed,language not deleted");
-
-
-                //}
             }
             catch (Exception )
             {
@@ -493,26 +409,28 @@ namespace SpecflowTests //Deleting existing  language
 
 
 }
-namespace SpecflowTests //Duplication of value tab in languagetab
+namespace SpecflowTests //DuplicatedValues
 {
     [Binding]
-    public class Duplicatedvalue
+    public class DuplicatedLanguage
     {
-        [Given(@"I click on Language tab under Profile page\.")]
-        public void GivenIClickOnLanguageTabUnderProfilePage_()
+        
+
+        [When(@"I click on Add New button\.")]
+        public void WhenIClickOnAddNewButton_()
         {
             Thread.Sleep(1500);
             Driver.driver.FindElement(By.LinkText("Profile")).Click();
             Driver.driver.FindElement(By.LinkText("Languages")).Click();
         }
 
-        [When(@"I click on Add New button \.")]
-        public void WhenIClickOnAddNewButton_()
+        [When(@"I entered existing language and changed level and clicked on Add button")]
+        public void WhenIEnteredExistingLanguageAndChangedLevelAndClickedOnAddButton()
         {
             Thread.Sleep(5000);
-            
+
             //checking what languages are present to validate the duplicate value popupmessage
-            IReadOnlyCollection<IWebElement> list= Driver.driver.FindElements(By.XPath("//table[@class='ui fixed table']/tbody/tr/td[1]"));
+            System.Collections.Generic.IReadOnlyCollection<IWebElement> list = Driver.driver.FindElements(By.XPath("//table[@class='ui fixed table']/tbody/tr/td[1]"));
             //number of languages present in Table
             Console.WriteLine(list.Count);
             //writes what languages are present in the list
@@ -521,7 +439,7 @@ namespace SpecflowTests //Duplication of value tab in languagetab
                 Console.WriteLine(item.Text);
                 //if language is present then trying to send english with different value which actually gives duplicate value message.
                 if (item.Text.Contains("English"))
-                    
+
                 {
                     // Click on Add New button
                     Driver.driver.FindElement(By.XPath("//th[@class='right aligned']/div")).Click();
@@ -529,32 +447,26 @@ namespace SpecflowTests //Duplication of value tab in languagetab
                     Driver.driver.FindElement(By.XPath("//*[@name='name']")).SendKeys("English");
                     //Click on Language Level
                     SelectElement lang = new SelectElement(Driver.driver.FindElement(By.XPath("//*[@name='level']")));
-                    lang.SelectByIndex(3);
+                    lang.SelectByIndex(2);
+                    //Click on Add button
+                    Driver.driver.FindElement(By.XPath("//*[@value='Add']")).Click();
+
+
                 }
-                
+
             }
-           
-            
         }
 
-        [When(@"I entered existing language and changed level and clicked on Add button\.")]
-        public void WhenIEnteredExistingLanguageAndChangedLevelAndClickedOnAddButton_()
+        [Then(@"I should able to see tooltip intimating Duplicated data\.")]
+        public void ThenIShouldAbleToSeeTooltipIntimatingDuplicatedData_()
         {
-            //Click on Add button
-            Driver.driver.FindElement(By.XPath("//*[@value='Add']")).Click();
-        }
-
-        [Then(@"I should able to see popup intimating Duplicated data\.")]
-        public void ThenIShouldAbleToSeePopupIntimatingDuplicatedData_()
-        {
-
             try
             {
                 //reports
                 CommonMethods.ExtentReports();
-                CommonMethods.test= CommonMethods.extent.StartTest("Duplicate Level In Language");
+                CommonMethods.test = CommonMethods.extent.StartTest("Duplicate Level In Language");
                 String ExpectedValue = "Duplicated data";
-                String ActualValue = driver.FindElement(By.XPath("//div[@class='ns-box-inner']")).Text;
+                String ActualValue= Driver.driver.FindElement(By.XPath("//div[@class='ns-box-inner']")).Text;
                 Assert.AreEqual(ExpectedValue, ActualValue);
                 Assert.IsTrue(ActualValue.Contains("Duplicated data"));
                 CommonMethods.test.Log(LogStatus.Pass, "test Passed, Duplicate value message displayed Successfully");
@@ -567,40 +479,30 @@ namespace SpecflowTests //Duplication of value tab in languagetab
 
                 CommonMethods.test.Log(LogStatus.Fail, "testfailed, e.message");
             }
-            
-            
-           //div[@class='ns-box-inner']
-            
-            
-           
+
         }
     }
 }
-namespace SpecflowTests// Adding Exsisting Language.
+namespace SpecflowTests //AddingExistingLanguage
 {
     [Binding]
-    public class AddingexistingLanguage
+    public class AddingExistinglanguage
     {
-        [Given(@"I click on Language tab below Profile page\.")]
-        public void GivenIClickOnLanguageTabBelowProfilePage_()
+        [Given(@"I clicked on Add New button\.")]
+        public void GivenIClickedOnAddNewButton_()
         {
             //clicking on profileTab
             Driver.driver.FindElement(By.LinkText("Profile")).Click();
             //clicking on Language Tab
             Driver.driver.FindElement(By.LinkText("Languages")).Click();
-            
-        }
-
-        [When(@"I clicked on Add New button \.")]
-        public void WhenIClickedOnAddNewButton_()
-        {
             //clicking on AddNew button
             Driver.driver.FindElement(By.XPath("//th[@class='right aligned']/div")).Click();
         }
 
-        [When(@"I entered existing language and level and clicked on Add button\.")]
-        public void WhenIEnteredExistingLanguageAndLevelAndClickedOnAddButton_()
+        [When(@"I entered existing language and level and clicked on the Add button\.")]
+        public void WhenIEnteredExistingLanguageAndLevelAndClickedOnTheAddButton_()
         {
+
             //gets list of languages
             IReadOnlyCollection<IWebElement> ListOfLang = Driver.driver.FindElements(By.XPath("//table[@class='ui fixed table']/tbody"));
             //writes count of lanuage on console
@@ -610,7 +512,7 @@ namespace SpecflowTests// Adding Exsisting Language.
             {
                 Console.WriteLine(item.Text);
                 //checks ehether language is present
-                if(item.Text.Contains("Greek"))
+                if (item.Text.Contains("Greek"))
                 {
                     //sends same language which is present in table
                     Driver.driver.FindElement(By.XPath("//input[@name='name']")).SendKeys("Greek");
@@ -622,14 +524,12 @@ namespace SpecflowTests// Adding Exsisting Language.
 
                 }
             }
-            
-
         }
 
-        [Then(@"I should able to see popup intimating as language Exists\.")]
-        public void ThenIShouldAbleToSeePopupIntimatingAsLanguageExists_()
+
+        [Then(@"I should able to see tooltip intimating as language Exists\.")]
+        public void ThenIShouldAbleToSeeTooltipIntimatingAsLanguageExists_()
         {
-            //Reports
             try
             {
                 CommonMethods.ExtentReports();
@@ -640,36 +540,34 @@ namespace SpecflowTests// Adding Exsisting Language.
                 Assert.AreEqual(ExpectedCondition, ActualCondition);
                 Assert.IsTrue(ActualCondition.Contains("This language is already exist in your language list"));
                 CommonMethods.test.Log(LogStatus.Pass, "Test is Passed", "AddingExistinglanguage");
-                    }
-            catch(Exception e)
-            {
-                CommonMethods.test.Log(LogStatus.Fail, "testfailed",e);
             }
-
+            catch (Exception e)
+            {
+                CommonMethods.test.Log(LogStatus.Fail, "testfailed", e);
+            }
         }
     }
 }
-namespace SpecflowTests//Cheching Availabilty Scenario in profile page
+namespace SpecflowTests //checking AvailabityStatus
 {
     [Binding]
-    public class AvailabityStatus
+    public class AvailabilityStatus
     {
-        [Given(@"I click on edit button of Availabity in Profile page\.")]
-        public void GivenIClickOnEditButtonOfAvailabityInProfilePage_()
+        [Given(@"I click on edit button of the Availabity in Profile page\.")]
+        public void GivenIClickOnEditButtonOfTheAvailabityInProfilePage_()
         {
             Driver.driver.FindElement(By.XPath("//div[@class='item']//div/span[contains(text(),'Part Time')]/i")).Click();
         }
 
-        [When(@"I clicked on SelectType dropdown and selected status from dropdown\.")]
-        public void WhenIClickedOnSelectTypeDropdownAndSelectedStatusFromDropdown_()
+        [When(@"I clicked on the SelectType dropdown and selected status from dropdown\.")]
+        public void WhenIClickedOnTheSelectTypeDropdownAndSelectedStatusFromDropdown_()
         {
             SelectElement availability = new SelectElement(Driver.driver.FindElement(By.XPath("//Select[@name='availabiltyType']")));
-            availability.SelectByValue("Part Time");
-
+            availability.SelectByText("Part Time");
         }
 
-        [Then(@"I can see availability selected status and popup\.")]
-        public void ThenICanSeeAvailabilitySelectedStatusAndPopup_()
+        [Then(@"I can see availability selected status and Tooltip\.")]
+        public void ThenICanSeeAvailabilitySelectedStatusAndTooltip_()
         {
             try
             {
@@ -680,7 +578,7 @@ namespace SpecflowTests//Cheching Availabilty Scenario in profile page
                 Assert.AreEqual(ExpectedConditions, ActualCondition);
                 CommonMethods.test.Log(LogStatus.Pass, "TestPassed");
 
-                
+
 
             }
             catch (Exception)
@@ -691,27 +589,26 @@ namespace SpecflowTests//Cheching Availabilty Scenario in profile page
         }
     }
 }
-namespace SpecflowTests//checking Hours Availabity in profile page
+namespace SpecflowTests //Checking Hours AvailabilityStatus.
 {
     [Binding]
-    public class HoursTest
+    public class HoursAvailabity
     {
-        [Given(@"I click on edit button of hours in Profile page\.")]
-        public void GivenIClickOnEditButtonOfHoursInProfilePage_()
+        [Given(@"I click on edit button of hours in Profile page click \.")]
+        public void GivenIClickOnEditButtonOfHoursInProfilePageClick_()
         {
-            Driver.driver.FindElement(By.XPath("//div[@class='item']//div/span[contains(text(),'As needed')]/i")).Click();
+            Driver.driver.FindElement(By.XPath("//strong[contains(text(),'Hours')]//..//..//following-sibling::div/span/i")).Click();
         }
 
-        [When(@"I clicked on SelectType dropdown and selected hours from dropdown\.")]
-        public void WhenIClickedOnSelectTypeDropdownAndSelectedHoursFromDropdown_()
+        [When(@"I clicked on the SelectType dropdown and selected hours from dropdown\.")]
+        public void WhenIClickedOnTheSelectTypeDropdownAndSelectedHoursFromDropdown_()
         {
             SelectElement availability = new SelectElement(Driver.driver.FindElement(By.XPath("//Select[@name='availabiltyHour']")));
             availability.SelectByIndex(2);
-
         }
 
-        [Then(@"I should able to see selected hours and popup\.")]
-        public void ThenIShouldAbleToSeeSelectedHoursAndPopup_()
+        [Then(@"I should able to see the selected hours and popup\.")]
+        public void ThenIShouldAbleToSeeTheSelectedHoursAndPopup_()
         {
             try
             {
@@ -732,33 +629,29 @@ namespace SpecflowTests//checking Hours Availabity in profile page
             }
         }
     }
-    }
-namespace SpecflowTests// Checking Earn Target in profile page
+}
+namespace SpecflowTests
 {
     [Binding]
-    public class EarnTarget
+    public class EarnTargetStatus
     {
-        [Given(@"I click on edit button of EarnTarget in Profile page\.")]
+        [Given(@"I click on edit button of EarnTarget in Profile page \.")]
         public void GivenIClickOnEditButtonOfEarnTargetInProfilePage_()
         {
-
             Driver.driver.FindElement(By.XPath("//strong[contains(text(),'Earn Target')]//..//..//following-sibling::div/span/i")).Click();
         }
 
-        [When(@"I clicked on SelectType dropdown and selected amount from dropdown\.")]
-        public void WhenIClickedOnSelectTypeDropdownAndSelectedAmountFromDropdown_()
+        [When(@"I clicked on the SelectType dropdown and selected amount from dropdown\.")]
+        public void WhenIClickedOnTheSelectTypeDropdownAndSelectedAmountFromDropdown_()
         {
-
             SelectElement availability = new SelectElement(Driver.driver.FindElement(By.XPath("//Select[@name='availabiltyTarget']")));
             availability.SelectByIndex(2);
 
         }
 
-        [Then(@"I should able to see selected amount and popup\.")]
-        public void ThenIShouldAbleToSeeSelectedAmountAndPopup_()
+        [Then(@"I should able to see the selected amount and popup\.")]
+        public void ThenIShouldAbleToSeeTheSelectedAmountAndPopup_()
         {
-         
-
             try
             {
                 CommonMethods.ExtentReports();
@@ -778,7 +671,7 @@ namespace SpecflowTests// Checking Earn Target in profile page
             }
         }
     }
-}
+} // Checking EarnTargetStatus
 
 
 
