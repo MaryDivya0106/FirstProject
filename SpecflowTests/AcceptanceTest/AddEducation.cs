@@ -206,7 +206,7 @@ namespace SpecflowTests.AcceptanceTest
             //Click on Addnew
             Driver.driver.FindElement(By.XPath("//thead/tr/th[contains(text(),'Graduation Year')]/following-sibling::th/div")).Click();
         }
-
+        [Scope(Feature ="Education")]
         [When(@"I gave same inputs which exists and clicked on Add button\.")]
         public void WhenIGaveSameInputsWhichExistsAndClickedOnAddButton_()
         {
@@ -226,7 +226,7 @@ namespace SpecflowTests.AcceptanceTest
             Driver.driver.FindElement(By.XPath(" //div[@class='sixteen wide field']/input[@value='Add']")).Click();
 
         }
-
+        [Scope(Feature = "Education")]
         [Then(@"I shoul able to see Tool Tip as Information already exist \.")]
         public void ThenIShoulAbleToSeeToolTipAsInformationAlreadyExist_()
         {

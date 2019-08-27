@@ -1,8 +1,9 @@
-﻿Feature: Certifications
+﻿Feature: Certificate
 	In order to avoid silly mistakes
 	As a math idiot
 	I want to be told the sum of two numbers
 
+@mytag
 @mytag
 Scenario: Check if user could able to add Certificates under profile page.
 	Given I click on the Certification tab under Profile page.

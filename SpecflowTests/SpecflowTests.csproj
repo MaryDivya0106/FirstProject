@@ -115,11 +115,11 @@
       <DependentUpon>Language.feature</DependentUpon>
     </Compile>
     <Compile Include="AcceptanceTest\AddSkills.cs" />
+    <Compile Include="AcceptanceTest\Update certificate.cs" />
     <Compile Include="Utils\Start.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AcceptanceTest\Certi.feature" />
-    <None Include="AcceptanceTest\Certifications.feature" />
+    <None Include="AcceptanceTest\Certificate.feature" />
     <None Include="AcceptanceTest\Skills.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Skills.feature.cs</LastGenOutput>
