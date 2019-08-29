@@ -25,7 +25,7 @@ namespace SpecflowTests.AcceptanceTest
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-#line 1 "Description.feature"
+#line 1 "ProfileDescription.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
