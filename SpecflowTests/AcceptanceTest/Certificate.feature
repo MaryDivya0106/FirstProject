@@ -1,7 +1,7 @@
 ﻿Feature: Certificate
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to update my profile 
+	As a skill trader
+	I want to add the Certification that I know
 
 @mytag
 @mytag
@@ -12,9 +12,9 @@ Scenario: Check if user could able to add Certificates under profile page.
 
 
 	
-	Scenario Outline: Check if user could able to add maximum education details. 
+	Scenario Outline: Check if user could able to add maximum certificate details. 
 	Given I clicked on the education tab under Profile page
-	When When I add all the required details '<College_name>', <Country>','<Tittle>', <Degree>','<Year>'
+	When When I add all the required details '<Certificate>', '<From>', '<Year>'
 	Then that should be displayed on my education  listings
  
  Examples: 

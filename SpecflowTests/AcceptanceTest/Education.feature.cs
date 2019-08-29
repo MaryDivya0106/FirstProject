@@ -44,8 +44,8 @@ namespace SpecflowTests.AcceptanceTest
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Education", "\tIn order to update my profile \r\n\tAs a skill trader\r\n\tI want to add the Skill tha" +
-                    "t I know", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Education", "\tIn order to update my profile \r\n\tAs a skill trader\r\n\tI want to add the Education" +
+                    " that I know", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -92,7 +92,7 @@ namespace SpecflowTests.AcceptanceTest
 #line 8
  this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.Given("I click on the Education tab under Profile page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I click on  Education tab under Profile page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
  testRunner.When("I enter all the fields and click on Add button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
@@ -219,20 +219,19 @@ namespace SpecflowTests.AcceptanceTest
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Check if user is able to click on Skill edit icon to update.")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Update Existing ducation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Education")]
-        public virtual void CheckIfUserIsAbleToClickOnSkillEditIconToUpdate_()
+        public virtual void UpdateExistingDucation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check if user is able to click on Skill edit icon to update.", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Existing ducation", ((string[])(null)));
 #line 41
  this.ScenarioSetup(scenarioInfo);
 #line 42
- testRunner.Given("I click on the Education tab under Profile page and clicked on Update icon.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I click on the Education tab under Profile page and clicked on Update icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 43
- testRunner.When("I updated the current university name to new university in University Tab and i c" +
-                    "licked on Add button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I updated the current Tiitle name to new Title and i clicked on Update button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
- testRunner.Then("That current Univrsity should be displayed in the box .", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should able to see the tooltip as Education Updated.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

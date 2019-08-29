@@ -1,7 +1,7 @@
 ﻿Feature: Education
 	In order to update my profile 
 	As a skill trader
-	I want to add the Skill that I know
+	I want to add the Education that I know
 
 	# Education Scenarios
 	#//positive flow

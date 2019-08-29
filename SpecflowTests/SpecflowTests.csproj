@@ -37,9 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnitTestAdapter.WithFramework.2.0.0\lib\nunit.core.dll</HintPath>
@@ -73,7 +72,6 @@
     </Reference>
     <Reference Include="TechTalk.SpecFlow, Version=2.3.2.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.3.2\lib\net45\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
@@ -97,6 +95,29 @@
   <ItemGroup>
     <Compile Include="AcceptanceTest\AddEducation.cs" />
     <Compile Include="AcceptanceTest\AddLanguage.cs" />
+    <Compile Include="AcceptanceTest\Certificate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Certificate.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptanceTest\Description.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Description.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptanceTest\ManageListing.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageListing.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptanceTest\ManageListingSteps.cs" />
+    <Compile Include="AcceptanceTest\ShareSkill.cs" />
+    <Compile Include="AcceptanceTest\ShareSkill.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShareSkill.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptanceTest\ShareSkillPage.cs" />
     <Compile Include="AcceptanceTest\Skills.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +129,7 @@
       <DependentUpon>Education.feature</DependentUpon>
     </Compile>
     <Compile Include="AcceptanceTest\AddCertification.cs" />
+    <Compile Include="AcceptanceTest\DescriptionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AcceptanceTest\Language.feature.cs">
       <AutoGen>True</AutoGen>
@@ -115,11 +137,25 @@
       <DependentUpon>Language.feature</DependentUpon>
     </Compile>
     <Compile Include="AcceptanceTest\AddSkills.cs" />
-    <Compile Include="AcceptanceTest\Update certificate.cs" />
     <Compile Include="Utils\Start.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="AcceptanceTest\Certificate.feature" />
+    <None Include="AcceptanceTest\Certificate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Certificate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="AcceptanceTest\Description.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Description.feature.cs</LastGenOutput>
+    </None>
+    <None Include="AcceptanceTest\ManageListing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ManageListing.feature.cs</LastGenOutput>
+    </None>
+    <None Include="AcceptanceTest\ShareSkill.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ShareSkill.feature.cs</LastGenOutput>
+    </None>
     <None Include="AcceptanceTest\Skills.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Skills.feature.cs</LastGenOutput>
